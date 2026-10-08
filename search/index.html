@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search | Creativa Academy</title>
+<meta name="description" content="Search the Creativa Academy website — programs, calendars, menus, supply lists, enrichment activities, and more.">
+<link rel="canonical" href="https://creativaacademy.com/search/">
+<link rel="icon" type="image/png" href="/assets/img/home/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+<style>
+.search-wrap{max-width:720px;margin:0 auto;padding:0 24px 80px}
+.search-input-row{position:relative;margin-bottom:40px}
+.search-input-row svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:20px;height:20px;stroke:var(--sage);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+#search-input{width:100%;padding:16px 20px 16px 50px;border:1.5px solid var(--line);border-radius:999px;font-family:'Jost',sans-serif;font-size:1rem;color:var(--ink);background:#fff;box-sizing:border-box;transition:border-color .2s,box-shadow .2s;outline:none}
+#search-input:focus{border-color:var(--sage);box-shadow:0 0 0 3px rgba(92,107,68,.12)}
+#search-input::placeholder{color:var(--ink);opacity:.4}
+.search-status{font-family:'Jost',sans-serif;font-size:.88rem;color:var(--ink);opacity:.5;margin-bottom:20px;letter-spacing:.02em}
+.search-results{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.search-result{background:#fff;border:1px solid var(--line);border-radius:14px;transition:box-shadow .18s,border-color .18s}
+.search-result:hover{border-color:rgba(92,107,68,.35);box-shadow:0 4px 18px rgba(59,68,48,.07)}
+.search-result a{display:block;padding:18px 22px;text-decoration:none;color:inherit}
+.result-section{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:4px}
+.result-title{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--ink);margin:0 0 5px;font-weight:500}
+.result-desc{font-family:'Jost',sans-serif;font-size:.88rem;color:var(--ink);opacity:.65;line-height:1.55;margin:0}
+.search-empty{text-align:center;padding:48px 0}
+.search-empty p{font-family:'Jost',sans-serif;color:var(--ink);opacity:.5;margin-top:8px}
+@media(max-width:600px){.search-wrap{padding:0 16px 60px}#search-input{font-size:.95rem}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="topbar">Now enrolling for 2026–2027 · Reggio Emilia inspired · <a href="tel:7869000099">Call (786) 900-0099</a></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/">
+      <img src="/assets/img/home/logo.png" alt="Creativa Academy — A Reggio Emilia Inspired School" width="498" height="177">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/team/">Meet Our Team</a></li>
+        <li><a href="/#programs">Programs</a></li>
+        <li><a href="/activities/">Enrichment &amp; Activities</a></li>
+        <li><a href="/tuition-financial-aid/">Tuition</a></li>
+        <li><a href="/parent-resources/">Parent Resources</a></li>
+        <li class="nav-hide-desk"><a href="/gallery/">Gallery</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li class="nav-hide-desk"><a href="/family-support/">Family Support</a></li>
+      </ul>
+      <div class="nav-mobile-ctas">
+        <a class="btn btn-solid" href="/tour/">Schedule a Tour</a>
+        <a class="btn btn-line" href="tel:7869000099">Call (786) 900-0099</a>
+      </div>
+    </nav>
+    <a class="nav-search-icon on" href="/search/" aria-label="Search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </a>
+    <a class="btn btn-solid" href="/tour/">Schedule a Tour</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div id="main" class="page-hero wrap center">
+  <span class="eyebrow">Find What You Need</span>
+  <h1>Search Creativa</h1>
+  <div class="divider"><span>❦</span></div>
+</div>
+
+<section style="padding-top:0">
+  <div class="search-wrap">
+    <div class="search-input-row">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="search-input" type="search" autocomplete="off" spellcheck="false"
+        placeholder="Search calendars, supply lists, programs…" aria-label="Search the website">
+    </div>
+    <p class="search-status" id="search-status" aria-live="polite"></p>
+    <ul class="search-results" id="search-results" role="list"></ul>
+    <div class="search-empty" id="search-empty" hidden>
+      <p>No results found. Try a different word or browse the pages below.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo"><img src="/assets/img/home/logo.png" alt="Creativa Academy — A Reggio Emilia Inspired School" width="498" height="177"></div>
+    <div class="tag">Where Children Learn, Grow &amp; Thrive.</div>
+    <div class="foot-links">
+      <a href="/">Home</a><a href="/about/">About Us</a><a href="/team/">Meet Our Team</a><a href="/#programs">Programs</a><a href="/tuition-financial-aid/">Tuition &amp; Financial Aid</a><a href="/activities/">Activities</a><a href="/calendar/">Calendar</a><a href="/menu/">Menu</a><a href="/parent-resources/">Parent Resources</a><a href="/gallery/">Gallery</a><a href="/contact/">Contact</a>
+    </div>
+    <div class="foot-social"><a href="https://www.instagram.com/creativaacademy.miami/" target="_blank" rel="noopener">Instagram</a></div>
+    <div class="foot-legal">© 2026 Creativa Academy · A Reggio Emilia Inspired School · West Miami, FL</div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('header nav');
+  if(!toggle || !nav) return;
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    });
+  });
+})();
+
+var INDEX = [
+  // Programs
+  {t:"Programs Overview",            u:"/#programs",              d:"Browse all age groups at Creativa Academy, from 15 months through Kindergarten.",                                                               k:"programs age groups overview all classes",                                                                               s:"Programs"},
+  {t:"15–17 Months",                 u:"/#programs",              d:"Our youngest classroom for babies 15 to 17 months old.",                                                                                         k:"infant baby 15 17 months youngest toddler",                                                                               s:"Programs"},
+  {t:"18–23 Months",                 u:"/#programs",              d:"An exploratory environment for toddlers 18 to 23 months old.",                                                                                   k:"toddler 18 23 months baby one year old",                                                                                  s:"Programs"},
+  {t:"Early Twos",                   u:"/#programs",              d:"Independence and imagination for two-year-olds in our Early Twos classroom.",                                                                   k:"two year old 2 year early twos toddler",                                                                                  s:"Programs"},
+  {t:"Late Twos",                    u:"/#programs",              d:"Building independence and friendship for children nearing their third birthday.",                                                               k:"two year old 2 year late twos almost three",                                                                              s:"Programs"},
+  {t:"Early Threes",                 u:"/#programs",              d:"Project-based discovery the Reggio way for three-year-olds.",                                                                                   k:"three year old 3 year early threes preschool",                                                                            s:"Programs"},
+  {t:"Late Threes",                  u:"/#programs",              d:"Richer collaboration and creative projects for children nearing four.",                                                                         k:"three year old 3 year late threes preschool almost four",                                                                 s:"Programs"},
+  {t:"VPK — Voluntary Pre-K",        u:"/#programs",              d:"Florida's free Voluntary Pre-Kindergarten program, taught with heart at Creativa. Available for eligible 4-year-olds.",                        k:"VPK pre-k pre kindergarten florida free voluntary 4 year old four vpk",                                                   s:"Programs"},
+  {t:"Kindergarten",                 u:"/#programs",              d:"New for 2026–27: continue the Creativa journey into big-kid academic learning.",                                                               k:"kindergarten K 5 year old five new 2026 2027",                                                                            s:"Programs"},
+  {t:"Bloom by Creativa",            u:"/bloom/",                 d:"An early intervention and family support program for children with developmental needs.",                                                       k:"bloom early intervention developmental support therapy special needs delay",                                               s:"Programs"},
+
+  // Tuition & Funding
+  {t:"Tuition & Financial Aid",      u:"/tuition-financial-aid/", d:"Tuition rates, payment options, and financial assistance available at Creativa Academy.",                                                     k:"tuition cost rates price fees financial aid scholarship assistance affordability pay monthly",                             s:"Tuition"},
+  {t:"VPK Funding (Free Pre-K)",     u:"/tuition-financial-aid/", d:"Creativa accepts VPK — Florida's free Voluntary Pre-K for eligible 4-year-olds.",                                                            k:"VPK free pre-k florida voluntary funding voucher qualify eligible",                                                       s:"Tuition"},
+  {t:"School Readiness Scholarship", u:"/tuition-financial-aid/", d:"Income-based childcare assistance through the Early Learning Coalition of Miami-Dade.",                                                      k:"school readiness scholarship elc early learning coalition subsidy income based low income assistance eligibility",         s:"Tuition"},
+  {t:"Step Up for Students",         u:"/tuition-financial-aid/", d:"Step Up for Students scholarships accepted at Creativa Academy.",                                                                             k:"step up for students scholarship florida low income",                                                                     s:"Tuition"},
+  {t:"FES Scholarship",              u:"/tuition-financial-aid/", d:"Family Empowerment Scholarship (FES) accepted at Creativa Academy.",                                                                         k:"FES family empowerment scholarship step up funding",                                                                      s:"Tuition"},
+
+  // Enrichment & Activities
+  {t:"Enrichment & Activities",      u:"/activities/",            d:"Yoga, music, soccer, ballet, gymnastics, cooking, science, and more — included for every child at Creativa.",                                k:"enrichment activities extracurricular",                                                                                   s:"Enrichment"},
+  {t:"Yoga",                         u:"/activities/",            d:"Weekly yoga classes for all Creativa students.",                                                                                               k:"yoga movement wellness mindfulness",                                                                                      s:"Enrichment"},
+  {t:"Music",                        u:"/activities/",            d:"Music enrichment included for every classroom.",                                                                                               k:"music instruments singing rhythm",                                                                                        s:"Enrichment"},
+  {t:"Soccer",                       u:"/activities/",            d:"Soccer program for Creativa students.",                                                                                                        k:"soccer sports physical education pe outdoor",                                                                             s:"Enrichment"},
+  {t:"Ballet & Dance",               u:"/activities/",            d:"Ballet enrichment at Creativa Academy.",                                                                                                      k:"ballet dance movement creative movement",                                                                                 s:"Enrichment"},
+  {t:"Gymnastics",                   u:"/activities/",            d:"Gymnastics enrichment for all Creativa students.",                                                                                            k:"gymnastics movement physical motor skills",                                                                               s:"Enrichment"},
+  {t:"Cooking",                      u:"/activities/",            d:"Children explore food, nutrition, and kitchen science.",                                                                                       k:"cooking food nutrition kitchen science",                                                                                  s:"Enrichment"},
+  {t:"Science",                      u:"/activities/",            d:"Hands-on science exploration and experiments for all age groups.",                                                                            k:"science experiments stem hands on exploration",                                                                           s:"Enrichment"},
+  {t:"Spanish",                      u:"/activities/",            d:"Spanish language enrichment woven into daily classroom life.",                                                                                 k:"spanish language bilingual",                                                                                              s:"Enrichment"},
+  {t:"Garden & Outdoor Play",        u:"/activities/",            d:"Nature exploration, garden time, and outdoor learning at Creativa.",                                                                          k:"garden outdoor nature play exploration",                                                                                  s:"Enrichment"},
+  {t:"Librarian Story Time",         u:"/activities/",            d:"Weekly librarian-led story time for all classrooms.",                                                                                          k:"library story time books reading librarian literacy",                                                                      s:"Enrichment"},
+
+  // Resources
+  {t:"Parent Resources",             u:"/parent-resources/",      d:"Forms, handbooks, supply lists, calendars, and useful links for current Creativa families.",                                                  k:"parent resources forms handbook documents supply list download current families",                                          s:"Resources"},
+  {t:"Classroom Supply Lists",       u:"/parent-resources/",      d:"Supply lists organized by classroom — find the list for your child's room and download or print it.",                                        k:"supply list supplies classroom what to bring materials school supplies pencils backpack",                                  s:"Resources"},
+  {t:"School Calendar",              u:"/calendar/",              d:"Creativa Academy's school calendar with holidays, events, and important dates for the year.",                                                 k:"calendar events holidays school year dates schedule important dates closings",                                             s:"Resources"},
+  {t:"Lunch Menu",                   u:"/menu/",                  d:"Creativa's weekly lunch menu — see what your child will be eating this week.",                                                                k:"menu lunch food meals breakfast snack weekly daily what's for lunch",                                                     s:"Resources"},
+  {t:"Gallery",                      u:"/gallery/",               d:"Photos of our classrooms, outdoor spaces, and daily life at Creativa Academy.",                                                              k:"gallery photos pictures classrooms outdoor school life",                                                                  s:"Resources"},
+
+  // Enrollment
+  {t:"Schedule a Tour",              u:"/tour/",                  d:"Come see our classrooms and meet our teachers. Fill out the form to request a tour.",                                                         k:"tour visit schedule appointment see the school request",                                                                   s:"Enrollment"},
+  {t:"Join the Waitlist",            u:"/waitlist/",              d:"Submit your interest form to hold a spot on the Creativa Academy waitlist.",                                                                  k:"waitlist enroll enrollment interest spot hold join",                                                                       s:"Enrollment"},
+  {t:"Family Support Services",      u:"/family-support/",        d:"Guidance for families navigating School Readiness, Step Up, and other financial assistance programs.",                                        k:"family support assistance help navigate school readiness step up elc financial aid guide",                                  s:"Enrollment"},
+  {t:"Parents Night Out",            u:"/parents-night-out/",     d:"Monthly drop-in evening childcare — leave your child for a fun night while you enjoy a break.",                                              k:"parents night out PNO drop in childcare evening babysitting date night monthly",                                           s:"Programs"},
+
+  // School Info
+  {t:"About Creativa Academy",       u:"/about/",                 d:"Learn about our Reggio Emilia-inspired philosophy, our founder Mrs. Say, and how Creativa began.",                                           k:"about us reggio emilia philosophy approach history founder mrs say story mission school",                                   s:"About"},
+  {t:"Reggio Emilia Approach",       u:"/about/",                 d:"Creativa is Reggio Emilia-inspired — child-led inquiry, creativity, collaboration, and documentation.",                                      k:"reggio emilia approach philosophy pedagogy inquiry project based learning child led",                                       s:"About"},
+  {t:"Meet Our Team",                u:"/team/",                  d:"Get to know our teachers, classroom leads, and administrative staff.",                                                                        k:"teachers team staff faculty classrooms meet administration leadership support",                                             s:"About"},
+  {t:"Contact Us",                   u:"/contact/",               d:"Reach us at (786) 900-0099 or info@creativaacademy.com. We're at 13910 SW 8th St, West Miami, FL.",                                          k:"contact phone email address location directions 786 900 0099 info 8th street miami 33184",                                s:"Contact"},
+  {t:"Location & Directions",        u:"/contact/",               d:"Creativa Academy is located at 13910 SW 8th Street, West Miami, FL 33184, near SW 137th Avenue.",                                           k:"address location directions map 8th street west miami 33184 137th avenue where are you",                                  s:"Contact"},
+  {t:"Hours of Operation",           u:"/contact/",               d:"Contact us to confirm current school hours and drop-off/pick-up times.",                                                                     k:"hours open close drop off pick up schedule times",                                                                        s:"Contact"},
+];
+
+var fuse = new Fuse(INDEX, {
+  keys: [
+    {name:'t', weight:0.5},
+    {name:'k', weight:0.35},
+    {name:'d', weight:0.15}
+  ],
+  threshold: 0.38,
+  minMatchCharLength: 2,
+  includeScore: true
+});
+
+var input   = document.getElementById('search-input');
+var results = document.getElementById('search-results');
+var status  = document.getElementById('search-status');
+var empty   = document.getElementById('search-empty');
+
+function renderResults(q) {
+  results.innerHTML = '';
+  if (!q || q.trim().length < 2) {
+    status.textContent = '';
+    empty.hidden = true;
+    return;
+  }
+  var hits = fuse.search(q.trim());
+  if (hits.length === 0) {
+    status.textContent = '';
+    empty.hidden = false;
+    return;
+  }
+  empty.hidden = true;
+  status.textContent = hits.length + ' result' + (hits.length === 1 ? '' : 's');
+  hits.forEach(function(hit) {
+    var item = hit.item;
+    var li = document.createElement('li');
+    li.className = 'search-result';
+    li.innerHTML =
+      '<a href="' + item.u + '">' +
+        '<p class="result-section">' + item.s + '</p>' +
+        '<p class="result-title">' + item.t + '</p>' +
+        '<p class="result-desc">' + item.d + '</p>' +
+      '</a>';
+    results.appendChild(li);
+  });
+}
+
+// Pre-fill from ?q= URL param
+var params = new URLSearchParams(window.location.search);
+var initialQ = params.get('q') || '';
+if (initialQ) {
+  input.value = initialQ;
+  renderResults(initialQ);
+}
+
+input.addEventListener('input', function() {
+  renderResults(input.value);
+  // Update URL without reloading
+  var url = new URL(window.location);
+  if (input.value.trim()) {
+    url.searchParams.set('q', input.value.trim());
+  } else {
+    url.searchParams.delete('q');
+  }
+  history.replaceState(null, '', url);
+});
+
+input.focus();
+</script>
+
+</body>
+</html>

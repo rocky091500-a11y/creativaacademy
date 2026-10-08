@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family Support | Creativa Academy — West Miami, FL</title>
+<meta name="description" content="Creativa Family Support offers general guidance and appointment support to help families navigate FES scholarships, School Readiness, and VPK in Miami-Dade County.">
+<link rel="canonical" href="https://creativaacademy.com/family-support/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Creativa Academy">
+<meta property="og:title" content="Family Support | Creativa Academy — West Miami, FL">
+<meta property="og:description" content="Creativa Family Support offers general guidance and appointment support to help families navigate FES scholarships, School Readiness, and VPK in Miami-Dade County.">
+<meta property="og:url" content="https://creativaacademy.com/family-support/">
+<meta property="og:image" content="https://creativaacademy.com/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Family Support | Creativa Academy — West Miami, FL">
+<meta name="twitter:description" content="Creativa Family Support offers general guidance and appointment support to help families navigate FES scholarships, School Readiness, and VPK in Miami-Dade County.">
+<meta name="twitter:image" content="https://creativaacademy.com/assets/img/og-image.jpg">
+<link rel="icon" type="image/png" href="/assets/img/home/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+<style>
+/* ── Family Support page ── */
+:root {
+  --sage-pale: #EFF4E8;
+  --ink-soft:  #5F6658;
+  --muted:     rgba(58,66,40,.68);
+  --radius:    16px;
+}
+
+/* Hero — full-width centered (overrides homepage .hero grid) */
+.fs-hero{
+  background:var(--cream);
+  background-image:
+    radial-gradient(ellipse 55% 70% at 92% 40%, rgba(124,139,94,.07) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 50% at 8%  70%, rgba(185,161,92,.05) 0%, transparent 60%);
+  padding:88px 32px 72px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.fs-hero::before{content:'';position:absolute;top:-80px;right:-120px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(124,139,94,.09);pointer-events:none;}
+.fs-hero::after{content:'';position:absolute;top:-40px;right:-80px;width:320px;height:320px;border-radius:50%;border:1px solid rgba(185,161,92,.07);pointer-events:none;}
+.fs-hero h1{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:400;color:var(--ink);text-wrap:balance;max-width:660px;margin:16px auto 18px;line-height:1.22;letter-spacing:-.015em;}
+.fs-hero .hero-lead{font-size:1rem;color:var(--muted);max-width:500px;margin:0 auto 34px;line-height:1.75;font-weight:300;}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* Disclaimer band */
+.disclaimer-band{background:rgba(124,139,94,.07);border-top:1px solid rgba(124,139,94,.14);border-bottom:1px solid rgba(124,139,94,.14);padding:18px 32px;text-align:center;}
+.disclaimer-band p{font-size:.83rem;color:var(--ink-soft);max-width:800px;margin:0 auto;line-height:1.65;}
+.disclaimer-band strong{color:var(--ink-soft);font-weight:600;}
+
+/* Section heads */
+.section-head{text-align:center;margin-bottom:48px;}
+.section-head h2{font-size:clamp(1.5rem,3vw,1.95rem);font-weight:400;color:var(--ink);text-wrap:balance;letter-spacing:-.01em;}
+.section-head p{color:var(--muted);font-size:.93rem;max-width:540px;margin:14px auto 0;line-height:1.7;font-weight:300;}
+
+/* Program cards */
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+@media(max-width:720px){.prog-grid{grid-template-columns:1fr;}}
+.prog-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s;}
+.prog-card:hover{box-shadow:0 4px 28px rgba(59,68,48,.07);transform:translateY(-2px);}
+.prog-icon{font-size:1.4rem;margin-bottom:14px;opacity:.85;}
+.prog-name{font-family:'Playfair Display',serif;font-size:1rem;color:var(--ink);margin-bottom:10px;font-weight:400;}
+.prog-desc{font-size:.86rem;color:var(--muted);line-height:1.65;flex:1;font-weight:300;}
+.prog-link{display:inline-block;margin-top:18px;font-size:.78rem;color:var(--sage-deep);font-weight:600;letter-spacing:.03em;}
+.prog-link::after{content:' ↗';}
+.verify-tag{font-size:.62rem;color:var(--gold);border:1px solid var(--gold);border-radius:4px;padding:1px 6px;margin-left:5px;font-weight:700;vertical-align:middle;opacity:.9;}
+
+/* Three steps */
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+@media(max-width:720px){.steps-grid{grid-template-columns:1fr;}}
+.step-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px;}
+.step-num{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--gold);line-height:1;margin-bottom:14px;opacity:.9;}
+.step-name{font-weight:600;font-size:.88rem;color:var(--ink);margin-bottom:10px;letter-spacing:.01em;}
+.step-desc{font-size:.84rem;color:var(--muted);line-height:1.65;font-weight:300;}
+
+/* Questionnaire */
+.quiz-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:44px;max-width:680px;margin:0 auto;box-shadow:0 2px 24px rgba(59,68,48,.05);}
+@media(max-width:600px){.quiz-card{padding:28px 22px;}}
+.quiz-progress{font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px;}
+.quiz-q{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);margin-bottom:8px;text-wrap:balance;line-height:1.35;}
+.quiz-note{font-size:.79rem;color:var(--muted);margin-bottom:22px;line-height:1.6;font-weight:300;}
+.quiz-opts{display:flex;flex-direction:column;gap:10px;}
+.quiz-opt{background:var(--cream);border:1.5px solid var(--line);border-radius:10px;padding:13px 18px;cursor:pointer;font-size:.88rem;color:var(--ink-soft);text-align:left;transition:border-color .15s,background .15s;font-family:inherit;width:100%;}
+.quiz-opt:hover{border-color:var(--sage);background:var(--cream-deep);}
+.quiz-opt.sel{border-color:var(--sage-deep);background:var(--cream-deep);color:var(--ink);}
+.quiz-nav{display:flex;gap:10px;margin-top:24px;}
+.quiz-back{background:transparent;border:1.5px solid var(--line);color:var(--muted);border-radius:50px;padding:9px 20px;font-size:.84rem;cursor:pointer;font-family:inherit;transition:border-color .15s;}
+.quiz-back:hover:not(:disabled){border-color:var(--sage);}
+.quiz-back:disabled{opacity:.3;cursor:not-allowed;}
+.quiz-fwd{background:var(--sage-deep);color:#fff;border:none;border-radius:50px;padding:10px 26px;font-size:.84rem;cursor:pointer;font-family:inherit;transition:background .15s;}
+.quiz-fwd:hover:not(:disabled){background:var(--ink);}
+.quiz-fwd:disabled{opacity:.35;cursor:not-allowed;}
+.result-card{border-left:2px solid var(--gold);background:var(--cream-deep);padding:16px 20px;border-radius:0 10px 10px 0;margin-bottom:12px;}
+.result-prog{font-weight:700;font-size:.86rem;color:var(--sage-deep);margin-bottom:5px;}
+.result-why{font-size:.84rem;color:var(--ink-soft);line-height:1.65;font-weight:300;}
+.result-disc{font-size:.77rem;color:var(--muted);font-style:italic;margin:16px 0 20px;line-height:1.6;}
+.quiz-restart{background:none;border:none;color:var(--sage-deep);font-size:.79rem;cursor:pointer;text-decoration:underline;font-family:inherit;margin-top:8px;}
+
+/* Request Help form */
+.form-wrap{max-width:680px;margin:0 auto;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media(max-width:600px){.form-grid{grid-template-columns:1fr;}}
+.fs-field{display:flex;flex-direction:column;gap:7px;}
+.fs-field label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);}
+.fs-field input,.fs-field select,.fs-field textarea{width:100%;padding:13px 15px;border:1.5px solid rgba(59,68,48,.14);border-radius:10px;font-size:.9rem;font-family:inherit;color:var(--ink);background:var(--white);transition:border-color .15s;outline:none;}
+.fs-field input:focus,.fs-field select:focus,.fs-field textarea:focus{border-color:var(--sage);}
+.fs-field textarea{min-height:90px;resize:vertical;}
+.fs-field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235C6B44' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;background-color:var(--white);}
+.radio-group,.check-group{display:flex;flex-direction:column;gap:9px;margin-top:2px;}
+.radio-label,.check-label{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--ink-soft);cursor:pointer;font-weight:300;}
+.radio-label input,.check-label input{accent-color:var(--sage-deep);width:16px;height:16px;flex-shrink:0;}
+.form-full{grid-column:1/-1;}
+.consent-wrap{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:22px 0 0;}
+.consent-label{display:flex;align-items:flex-start;gap:12px;font-size:.83rem;color:var(--ink-soft);line-height:1.65;cursor:pointer;font-weight:300;}
+.consent-label input{margin-top:3px;accent-color:var(--sage-deep);flex-shrink:0;width:16px;height:16px;}
+.form-submit-wrap{margin-top:24px;text-align:center;}
+.form-note{font-size:.75rem;color:var(--muted);margin-top:12px;line-height:1.55;font-weight:300;}
+.preview-note{font-size:.7rem;color:var(--gold);font-style:italic;margin-top:6px;opacity:.85;}
+.fs-success{display:none;text-align:center;padding:64px 24px;}
+.fs-success .big-leaf{font-size:2.8rem;margin-bottom:18px;}
+.fs-success h2{font-family:'Playfair Display',serif;font-size:2rem;color:var(--ink);margin:0 0 14px;font-weight:400;}
+.fs-success p{font-size:1rem;color:var(--ink-soft);max-width:480px;margin:0 auto;line-height:1.7;}
+
+/* Apply independently */
+.apply-links{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px;}
+@media(max-width:600px){.apply-links{grid-template-columns:1fr;}}
+.apply-link-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;}
+.apply-link-name{font-weight:600;font-size:.87rem;color:var(--ink);margin-bottom:6px;}
+.apply-link-desc{font-size:.8rem;color:var(--muted);margin-bottom:14px;line-height:1.55;font-weight:300;}
+.apply-ext-link{font-size:.81rem;color:var(--sage-deep);font-weight:600;}
+.apply-ext-link::after{content:' ↗';}
+
+/* FAQ */
+.faq-list{max-width:740px;margin:0 auto;}
+.faq-list details{border-bottom:1px solid var(--line);padding:18px 0;}
+.faq-list details:first-child{border-top:1px solid var(--line);}
+.faq-list summary{font-weight:600;font-size:.9rem;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;line-height:1.45;}
+.faq-list summary::-webkit-details-marker{display:none;}
+.faq-list summary::after{content:'';width:16px;height:16px;flex-shrink:0;border-right:1.5px solid var(--sage);border-bottom:1.5px solid var(--sage);transform:rotate(45deg);transition:transform .2s;margin-top:-4px;}
+.faq-list details[open] summary::after{transform:rotate(-135deg);margin-top:4px;}
+.faq-a{font-size:.86rem;color:var(--muted);margin-top:13px;line-height:1.72;max-width:640px;font-weight:300;}
+
+/* Can / Cannot */
+.canc-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;max-width:840px;margin:0 auto;}
+@media(max-width:640px){.canc-grid{grid-template-columns:1fr;}}
+.canc-col h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:var(--ink);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+.canc-col ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.canc-col li{font-size:.84rem;color:var(--muted);display:flex;gap:10px;align-items:flex-start;line-height:1.6;font-weight:300;}
+.can-dot{color:var(--sage-deep);font-size:.95rem;flex-shrink:0;margin-top:2px;}
+.cannot-dot{color:rgba(175,75,55,.65);font-size:.95rem;flex-shrink:0;margin-top:2px;}
+
+/* Contact section */
+.contact-section{background:var(--sage-pale);}
+.contact-band{display:flex;flex-wrap:wrap;gap:48px;justify-content:center;align-items:flex-start;max-width:820px;margin:36px auto 0;text-align:center;}
+.contact-info{display:flex;flex-direction:column;gap:9px;}
+.contact-info a{color:var(--sage-deep);font-size:.9rem;font-weight:500;}
+.contact-info span{color:var(--muted);font-size:.82rem;font-weight:300;}
+.portal-label{background:rgba(92,107,68,.08);border:1px solid rgba(92,107,68,.2);border-radius:50px;padding:10px 22px;font-size:.81rem;color:var(--muted);display:inline-flex;align-items:center;gap:8px;cursor:default;user-select:none;margin-top:6px;font-weight:300;}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+
+<div class="topbar">Now enrolling for 2026–2027 · Reggio Emilia inspired · <a href="tel:7869000099">Call (786) 900-0099 to schedule a tour</a></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/">
+      <img src="/assets/img/home/logo.png" alt="Creativa Academy — A Reggio Emilia Inspired School" width="498" height="177">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/team/">Meet Our Team</a></li>
+        <li><a href="/#programs">Programs</a></li>
+        <li><a href="/activities/">Enrichment &amp; Activities</a></li>
+        <li><a href="/tuition-financial-aid/">Tuition</a></li>
+        <li><a href="/parent-resources/">Parent Resources</a></li>
+        <li class="nav-hide-desk"><a href="/gallery/">Gallery</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li class="nav-hide-desk"><a class="on" href="/family-support/">Family Support</a></li>
+      </ul>
+      <div class="nav-mobile-ctas">
+        <a class="btn btn-solid" href="/tour/">Schedule a Tour</a>
+        <a class="btn btn-line" href="tel:7869000099">Call (786) 900-0099</a>
+      </div>
+    </nav>
+    <a class="nav-search-icon" href="/search/" aria-label="Search">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </a>
+    <a class="btn btn-solid" href="/tour/">Schedule a Tour</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="fs-hero" id="main">
+  <div class="wrap">
+    <span class="eyebrow">Creativa Family Support</span>
+    <h1>Guidance and Appointment Support for Your Family</h1>
+    <p class="hero-lead">You do not have to navigate this alone. Choose the level of support that feels right for your family — from general information to a one-on-one appointment with Creativa staff.</p>
+    <div class="hero-btns">
+      <a class="btn btn-solid" href="#form-section">Request Help or an Appointment</a>
+      <a class="btn btn-line" href="#apply-section">Apply Independently</a>
+    </div>
+  </div>
+</section>
+
+<!-- Disclaimer — 1st placement, below hero -->
+<div class="disclaimer-band">
+  <p><strong>Creativa Family Support provides general guidance and organizational assistance.</strong> Parents remain in control of their official accounts, documents, and applications. Creativa does not determine eligibility or guarantee approval.</p>
+</div>
+
+<!-- Programs We Can Help You Navigate -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Programs We Can Help You Navigate</h2>
+      <p>Creativa can provide general information, explain how each program works, and help you schedule an appointment to discuss your family's options.</p>
+    </div>
+    <div class="prog-grid">
+      <div class="prog-card">
+        <div class="prog-icon">🌿</div>
+        <div class="prog-name">FES — Step Up Scholarships</div>
+        <div class="prog-desc">Step Up For Students offers scholarships that may help pay for private school tuition, including options for children with documented disabilities and income-based scholarships for eligible families.</div>
+        <a class="prog-link" href="https://www.stepupforstudents.org" target="_blank" rel="noopener noreferrer">Step Up For Students</a>
+      </div>
+      <div class="prog-card">
+        <div class="prog-icon">🏡</div>
+        <div class="prog-name">School Readiness Funding</div>
+        <div class="prog-desc">School Readiness funding may help eligible families cover the cost of childcare while a parent is working, in school, or in job training. Eligibility depends on income, employment, and household circumstances.</div>
+        <a class="prog-link" href="https://familyservices.floridaearlylearning.com/" target="_blank" rel="noopener noreferrer">Florida Family Portal</a>
+      </div>
+      <div class="prog-card">
+        <div class="prog-icon">🌱</div>
+        <div class="prog-name">VPK — Voluntary Pre-Kindergarten</div>
+        <div class="prog-desc">VPK is a free program available to all Florida children who turn 4 by September 1, regardless of household income. It is voluntary and a wonderful preparation for kindergarten.</div>
+        <a class="prog-link" href="https://familyservices.floridaearlylearning.com/" target="_blank" rel="noopener noreferrer">Apply for VPK</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section style="background:var(--cream-deep);padding:72px 0;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How It Works</h2>
+      <p>Three simple steps. You remain in control throughout.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-name">Tell Us What You Need</div>
+        <div class="step-desc">Use the questionnaire below for a general starting point, or go straight to the Request Help form. Tell us which program interests you and what kind of support you are looking for.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-name">Meet With Creativa</div>
+        <div class="step-desc">A Creativa Family Support team member will contact you using your preferred communication method to schedule a conversation and answer your questions.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-name">Move Forward, Your Way</div>
+        <div class="step-desc">Apply independently using our guides and official links, or continue working with Creativa as you navigate the process. Our help is always optional.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Questionnaire -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Which Program May Help My Family?</h2>
+      <p>Answer three general questions to get a starting point. No sensitive information is collected here.</p>
+    </div>
+    <div class="quiz-card">
+      <div id="qscreen">
+        <div class="quiz-progress" id="qprog">Question 1 of 3</div>
+        <div class="quiz-q" id="qq"></div>
+        <div class="quiz-note" id="qnote"></div>
+        <div class="quiz-opts" id="qopts"></div>
+        <div class="quiz-nav">
+          <button class="quiz-back" id="qback" onclick="qBack()" disabled>← Back</button>
+          <button class="quiz-fwd" id="qfwd" onclick="qNext()" disabled>Next →</button>
+        </div>
+      </div>
+      <div id="qresult" style="display:none;">
+        <div style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-deep);font-weight:700;margin-bottom:12px;">Based on your answers</div>
+        <div id="result-list"></div>
+        <div class="result-disc">This questionnaire provides general information only. Creativa does not determine eligibility. Program requirements may change. Please contact us to discuss your family's specific situation.</div>
+        <a class="btn btn-solid" href="#form-section" style="display:inline-block;">Request Help or an Appointment</a>
+        <div><button class="quiz-restart" onclick="qRestart()">Start over</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Disclaimer — 2nd placement, above form -->
+<div class="disclaimer-band">
+  <p><strong>This form is not an official government application.</strong> Do not submit passwords, Social Security numbers, income details, medical records, or sensitive documents through this form. Creativa will contact you to schedule a general information appointment.</p>
+</div>
+
+<!-- Request Help Form -->
+<section style="background:var(--cream-deep);" id="form-section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Request Help or an Appointment</h2>
+      <p>Fill out the form below and a Creativa Family Support team member will contact you using your preferred method.</p>
+    </div>
+    <div class="fs-success" id="fs-success">
+      <div class="big-leaf">🌿</div>
+      <h2>Thank you — we received your request.</h2>
+      <p>A Creativa Family Support team member will contact you using your preferred method. If you need to reach us sooner, call <strong>(786) 900-0099</strong>.</p>
+    </div>
+    <div class="form-wrap" id="fs-form-card">
+      <form id='helpform' method='POST' name='family-support' novalidate data-netlify='true'>
+        <input type="hidden" name="form-name" value="family-support">
+        <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="form-grid">
+
+          <div class="fs-field form-full">
+            <label for="pname">Your Name <span style="color:#8B3A30">*</span></label>
+            <input id="pname" type="text" name="name" placeholder="Your first and last name" required>
+          </div>
+
+          <div class="fs-field">
+            <label for="pphone">Phone Number <span style="color:#8B3A30">*</span></label>
+            <input id="pphone" type="tel" name="phone" placeholder="(786) 000-0000" required>
+          </div>
+
+          <div class="fs-field">
+            <label for="pemail">Email Address <span style="color:#8B3A30">*</span></label>
+            <input id="pemail" type="email" name="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="fs-field">
+            <label for="plang">Preferred Language</label>
+            <select id="plang" name="language">
+              <option value="" disabled selected>Select</option>
+              <option>English</option>
+              <option>Spanish</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="fs-field">
+            <label>Preferred Contact Method</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="contact-method" value="Phone call"> Phone call</label>
+              <label class="radio-label"><input type="radio" name="contact-method" value="Text message"> Text message</label>
+              <label class="radio-label"><input type="radio" name="contact-method" value="Email"> Email</label>
+            </div>
+          </div>
+
+          <div class="fs-field form-full">
+            <label>Program of Interest <span style="color:var(--muted);font-size:.7rem;text-transform:none;letter-spacing:0;font-weight:300">(select all that apply)</span></label>
+            <div class="check-group" style="flex-direction:row;flex-wrap:wrap;gap:12px 24px;margin-top:4px;">
+              <label class="check-label"><input type="checkbox" name="program[]" value="FES / Step Up"> FES / Step Up Scholarships</label>
+              <label class="check-label"><input type="checkbox" name="program[]" value="School Readiness"> School Readiness Funding</label>
+              <label class="check-label"><input type="checkbox" name="program[]" value="VPK"> VPK (Pre-Kindergarten)</label>
+              <label class="check-label"><input type="checkbox" name="program[]" value="Not sure"> I am not sure yet</label>
+            </div>
+          </div>
+
+          <div class="fs-field form-full">
+            <label>How can we help you?</label>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="help-type" value="General information"> I would like general information about a program</label>
+              <label class="radio-label"><input type="radio" name="help-type" value="Understand the process"> I would like help understanding the application process</label>
+              <label class="radio-label"><input type="radio" name="help-type" value="Appointment"> I would like to schedule an appointment with Creativa staff</label>
+              <label class="radio-label"><input type="radio" name="help-type" value="Independent question"> I prefer to apply independently and just have a question</label>
+            </div>
+          </div>
+
+          <div class="fs-field form-full">
+            <label>Preferred Appointment Days <span style="color:var(--muted);font-size:.7rem;text-transform:none;letter-spacing:0;font-weight:300">(optional — select all that work)</span></label>
+            <div class="check-group" style="flex-direction:row;flex-wrap:wrap;gap:10px 20px;margin-top:4px;">
+              <label class="check-label"><input type="checkbox" name="days[]" value="Monday"> Monday</label>
+              <label class="check-label"><input type="checkbox" name="days[]" value="Tuesday"> Tuesday</label>
+              <label class="check-label"><input type="checkbox" name="days[]" value="Wednesday"> Wednesday</label>
+              <label class="check-label"><input type="checkbox" name="days[]" value="Thursday"> Thursday</label>
+              <label class="check-label"><input type="checkbox" name="days[]" value="Friday"> Friday</label>
+            </div>
+          </div>
+
+          <div class="fs-field form-full">
+            <label for="appt-time">Preferred Appointment Time <span style="color:var(--muted);font-size:.7rem;text-transform:none;letter-spacing:0;font-weight:300">(optional)</span></label>
+            <select id="appt-time" name="appt-time">
+              <option value="" disabled selected>Select a time preference</option>
+              <option>Morning (9:00 – 10:00 am)</option>
+              <option>Midday (10:00 am – 12:00 pm)</option>
+              <option>Early afternoon (12:00 – 2:00 pm)</option>
+              <option>No preference</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="consent-wrap">
+          <label class="consent-label">
+            <input type="checkbox" id="consent" required>
+            I agree that Creativa Family Support may contact me about my request for general information or an appointment. I understand that this form is not an official government application and that I should not submit passwords, Social Security numbers, financial information, medical records, or other sensitive documents through this form.
+          </label>
+        </div>
+        <div class="form-submit-wrap">
+          <button class="btn btn-solid" type="submit" id="fs-btn" style="font-size:1rem;padding:14px 44px;">Request Help or an Appointment</button>
+          <p class="form-note">A Creativa Family Support team member will contact you using your preferred communication method. Appointment requests are managed personally by Creativa staff.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Apply Independently -->
+<section id="apply-section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Prefer to Apply Independently?</h2>
+      <p>You may apply for any of these programs entirely on your own. Use the official links below to get started. Creativa can still answer general questions if you have them.</p>
+    </div>
+    <div class="apply-links">
+      <div class="apply-link-card">
+        <div class="apply-link-name">FES — Step Up For Students</div>
+        <div class="apply-link-desc">Apply directly for FES scholarships through Step Up For Students. Create or log in to your account to begin.</div>
+        <a class="apply-ext-link" href="https://www.stepupforstudents.org" target="_blank" rel="noopener noreferrer">stepupforstudents.org</a>
+      </div>
+      <div class="apply-link-card">
+        <div class="apply-link-name">School Readiness — Florida Family Portal</div>
+        <div class="apply-link-desc">Apply for School Readiness funding through the Florida Family Portal. Create or log in to your account to begin.</div>
+        <a class="apply-ext-link" href="https://familyservices.floridaearlylearning.com/" target="_blank" rel="noopener noreferrer">Florida Family Portal</a>
+      </div>
+      <div class="apply-link-card">
+        <div class="apply-link-name">VPK — Florida Family Portal</div>
+        <div class="apply-link-desc">Apply for VPK through the same Florida Family Portal. VPK applications are free and open to all eligible Florida 4-year-olds.</div>
+        <a class="apply-ext-link" href="https://familyservices.floridaearlylearning.com/" target="_blank" rel="noopener noreferrer">Apply for VPK</a>
+      </div>
+      <div class="apply-link-card">
+        <div class="apply-link-name">Miami-Dade Early Learning Coalition</div>
+        <div class="apply-link-desc">Questions about School Readiness or VPK in Miami-Dade County? Contact your local Early Learning Coalition directly.</div>
+        <a class="apply-ext-link" href="https://www.elcmdm.org/" target="_blank" rel="noopener noreferrer">elcmdm.org</a>
+      </div>
+    </div>
+    <p class="center" style="font-size:.83rem;color:var(--muted);margin-top:24px;"><strong style="color:var(--ink-soft);">familyfunding@creativaacademy.com</strong> — confirm mailbox is active before enabling as a link.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--white);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>Is Creativa Family Support required?</summary>
+        <div class="faq-a">No. Creativa Family Support is completely optional. You can apply for FES, School Readiness, or VPK entirely on your own. We offer this service because many families find the process confusing or time-consuming.</div>
+      </details>
+      <details>
+        <summary>Can I apply independently?</summary>
+        <div class="faq-a">Yes. Official links and general guides are available on this page. Creativa can still answer general questions if you have them — our help is always optional.</div>
+      </details>
+      <details>
+        <summary>Does Creativa decide whether I qualify?</summary>
+        <div class="faq-a">No. Eligibility is determined by Step Up For Students, the Early Learning Coalition, or the Florida Department of Education. Creativa helps you understand the process, but we do not control or influence the official decision.</div>
+      </details>
+      <details>
+        <summary>What if I do not know which program I need?</summary>
+        <div class="faq-a">That is okay. Use the questionnaire on this page for a general starting point, or request an appointment and we will help you explore your options together. You do not need to have all the answers before you reach out.</div>
+      </details>
+      <details>
+        <summary>Do I need every document before contacting Creativa?</summary>
+        <div class="faq-a">No. Contact us first. During an appointment, Creativa can help you understand what documents are generally needed for the program you are exploring.</div>
+      </details>
+      <details>
+        <summary>Will Creativa need my password or Social Security number?</summary>
+        <div class="faq-a">No. Creativa will never ask for your government portal password, your Social Security number, or any financial login credentials. You enter those yourself, directly in the official government portal.</div>
+      </details>
+      <details>
+        <summary>Can Creativa submit the application for me?</summary>
+        <div class="faq-a">No. You remain in control of your official account and application. Creativa can guide you through the process and answer questions, but will not log into your account, impersonate you, or submit information on your behalf.</div>
+      </details>
+      <details>
+        <summary>Can I receive help in Spanish?</summary>
+        <div class="faq-a">Yes. Creativa Family Support is available in Spanish. Please select Spanish as your preferred language on the form, or simply call or email us and we will assist you in Spanish.</div>
+      </details>
+      <details>
+        <summary>What happens after I submit the form?</summary>
+        <div class="faq-a">A Creativa Family Support team member will contact you using your preferred communication method to schedule a consultation or answer your question. Appointment requests are handled personally by Creativa staff.</div>
+      </details>
+      <details>
+        <summary>Is my information kept private?</summary>
+        <div class="faq-a">Yes. The information you submit on this form is used only to contact you about your request. Creativa does not share your contact information with outside organizations. A Privacy Notice is available on request.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- What Creativa Can and Cannot Do -->
+<section style="background:var(--cream-deep);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What Creativa Can and Cannot Do</h2>
+    </div>
+    <div class="canc-grid">
+      <div class="canc-col">
+        <h3>Creativa can help you —</h3>
+        <ul>
+          <li><span class="can-dot">✓</span> Provide general information about FES, School Readiness, and VPK</li>
+          <li><span class="can-dot">✓</span> Explain the application process in plain language</li>
+          <li><span class="can-dot">✓</span> Help you understand which documents are typically needed</li>
+          <li><span class="can-dot">✓</span> Schedule appointments and follow-up reminders</li>
+          <li><span class="can-dot">✓</span> Answer general questions before and after your appointment</li>
+          <li><span class="can-dot">✓</span> Provide step-by-step guidance as you complete your own application</li>
+        </ul>
+      </div>
+      <div class="canc-col">
+        <h3>Creativa cannot —</h3>
+        <ul>
+          <li><span class="cannot-dot">✗</span> Determine whether your family qualifies for any program</li>
+          <li><span class="cannot-dot">✗</span> Guarantee approval, funding, or placement</li>
+          <li><span class="cannot-dot">✗</span> Access your official government accounts or portals</li>
+          <li><span class="cannot-dot">✗</span> Submit an application on your behalf</li>
+          <li><span class="cannot-dot">✗</span> Collect, copy, or store copies of your documents during this phase</li>
+          <li><span class="cannot-dot">✗</span> Represent Creativa as Step Up For Students or the Early Learning Coalition</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Creativa Family Support -->
+<section class="contact-section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Contact Creativa Family Support</h2>
+      <p>Have a question before you request an appointment? We are happy to help.</p>
+    </div>
+    <div class="contact-band">
+      <div class="contact-info">
+        <span>Creativa Academy</span>
+        <span>13910 SW 8th St, Miami, FL 33184</span>
+        <a href="tel:7869000099">(786) 900-0099</a>
+        <span>familyfunding@creativaacademy.com
+          <span style="border:1px solid rgba(59,68,48,.2);border-radius:4px;padding:1px 6px;font-size:.68rem;color:var(--muted);">Confirm before activating</span>
+        </span>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:.79rem;color:var(--muted);margin-bottom:10px;font-weight:300;">Secure family records portal</div>
+        <div class="portal-label">
+          <span>🔒</span>
+          Secure Parent Portal — Coming Later
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo"><img src="/assets/img/home/logo.png" alt="Creativa Academy — A Reggio Emilia Inspired School" width="498" height="177"></div>
+    <div class="tag">Where Children Learn, Grow &amp; Thrive.</div>
+    <div class="foot-links">
+      <a href="/">Home</a><a href="/about/">About Us</a><a href="/team/">Meet Our Team</a><a href="/#programs">Programs</a><a href="/tuition-financial-aid/">Tuition &amp; Financial Aid</a><a href="/activities/">Activities</a><a href="/calendar/">Calendar</a><a href="/menu/">Menu</a><a href="/parent-resources/">Parent Resources</a><a href="/gallery/">Gallery</a><a href="/contact/">Contact</a><a href="/family-support/">Family Support</a>
+    </div>
+    <div class="foot-social"><a href="https://www.instagram.com/creativaacademy.miami/" target="_blank" rel="noopener">Instagram</a></div>
+    <div class="foot-legal">© 2026 Creativa Academy · A Reggio Emilia Inspired School · West Miami, FL</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('header nav');
+  if(!toggle || !nav) return;
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    });
+  });
+})();
+
+// Questionnaire
+var Qs=[
+  {q:"How old is your child, or how old will they be on September 1 of the upcoming school year?",
+   note:"Choose the closest option. You do not need to share an exact date of birth.",
+   opts:["Under 2 years old","2 to 3 years old","3 years old","4 years old by September 1","5 years old or older"]},
+  {q:"Does your child have a documented disability, developmental delay, or special learning need?",
+   note:"You do not need to share a diagnosis here. This helps identify which program to explore first.",
+   opts:["Yes, they have documentation","No","I am not sure"]},
+  {q:"Are you currently working, in school, or enrolled in a job training program?",
+   note:"",
+   opts:["Yes","No","Sometimes or it varies"]}
+];
+var step=0,ans=[];
+
+function renderQ(){
+  var q=Qs[step];
+  document.getElementById('qprog').textContent='Question '+(step+1)+' of '+Qs.length;
+  document.getElementById('qq').textContent=q.q;
+  document.getElementById('qnote').textContent=q.note;
+  var el=document.getElementById('qopts');
+  el.innerHTML='';
+  q.opts.forEach(function(o,i){
+    var b=document.createElement('button');
+    b.className='quiz-opt'+(ans[step]===i?' sel':'');
+    b.textContent=o;b.type='button';
+    b.onclick=function(){selOpt(i);};
+    el.appendChild(b);
+  });
+  document.getElementById('qback').disabled=step===0;
+  document.getElementById('qfwd').textContent=step===Qs.length-1?'See Results →':'Next →';
+  document.getElementById('qfwd').disabled=ans[step]===undefined;
+}
+
+function selOpt(i){
+  ans[step]=i;
+  document.querySelectorAll('.quiz-opt').forEach(function(b,idx){b.classList.toggle('sel',idx===i);});
+  document.getElementById('qfwd').disabled=false;
+}
+
+function qNext(){if(step<Qs.length-1){step++;renderQ();}else showResult();}
+function qBack(){if(step>0){step--;renderQ();}}
+
+function showResult(){
+  document.getElementById('qscreen').style.display='none';
+  document.getElementById('qresult').style.display='block';
+  var age=ans[0],dis=ans[1],emp=ans[2];
+  var results=[];
+  if(age===3){results.push({prog:'VPK — Voluntary Pre-Kindergarten',why:'VPK is available to all Florida children who turn 4 by September 1, regardless of household income. Your child may be eligible for the upcoming school year.'});}
+  if(dis===0){results.push({prog:'FES — Unique Abilities Scholarship',why:'The Unique Abilities Scholarship through Step Up For Students may be available for children with a documented disability or developmental delay. A consultation can help you explore this option.'});}
+  if(dis===2){results.push({prog:'You may have more than one option',why:"Request a general guidance appointment to explore FES, School Readiness, or VPK. We can help you understand which programs may apply to your family's situation."});}
+  if(emp===0||emp===2){results.push({prog:'School Readiness Funding',why:'School Readiness funding may be available for families where a parent is working, in school, or in job training. Eligibility also depends on household income and other factors — a consultation can help clarify your situation.'});}
+  if(results.length===0){results.push({prog:'A consultation may help',why:'Based on your answers, the most helpful next step is a conversation with Creativa Family Support. We can help you understand which programs may be worth exploring for your family.'});}
+  var el=document.getElementById('result-list');
+  el.innerHTML='';
+  results.forEach(function(r){
+    var d=document.createElement('div');d.className='result-card';
+    d.innerHTML='<div class="result-prog">'+r.prog+'</div><div class="result-why">'+r.why+'</div>';
+    el.appendChild(d);
+  });
+}
+
+function qRestart(){
+  step=0;ans=[];
+  document.getElementById('qscreen').style.display='block';
+  document.getElementById('qresult').style.display='none';
+  renderQ();
+}
+
+renderQ();
+
+// Form — preview mode, not connected
+document.getElementById('helpform').addEventListener('submit', function(e){
+  e.preventDefault();
+  var btn = document.getElementById('fs-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  fetch('/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: new URLSearchParams(new FormData(this)).toString()
+  })
+  .then(function(){
+    document.getElementById('fs-form-card').style.display = 'none';
+    var s = document.getElementById('fs-success');
+    s.style.display = 'block';
+    s.scrollIntoView({behavior:'smooth', block:'start'});
+  })
+  .catch(function(){
+    btn.disabled = false;
+    btn.textContent = 'Request Help or an Appointment';
+    alert('Something went wrong. Please call us at (786) 900-0099.');
+  });
+});
+</script>
+
+</body>
+</html>

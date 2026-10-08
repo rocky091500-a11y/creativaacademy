@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Creativa Academy</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Creativa Academy">
+<meta property="og:title" content="Thank You | Creativa Academy">
+<meta property="og:description" content="">
+<meta property="og:url" content="https://creativaacademy.com/">
+<meta property="og:image" content="https://creativaacademy.com/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Thank You | Creativa Academy">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://creativaacademy.com/assets/img/og-image.jpg">
+
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="/assets/img/home/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="topbar">Now enrolling for 2026–2027 · Reggio Emilia inspired · <a href="tel:7869000099">Call (786) 900-0099 to schedule a tour</a></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/">
+      <img src="/assets/img/home/logo.png" alt="Creativa Academy — A Reggio Emilia Inspired School" width="498" height="177">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/team/">Meet Our Team</a></li>
+        <li><a href="/#programs">Programs</a></li>
+        <li><a href="/activities/">Enrichment &amp; Activities</a></li>
+        <li><a href="/tuition-financial-aid/">Tuition</a></li>
+        <li><a href="/parent-resources/">Parent Resources</a></li>
+        <li class="nav-hide-desk"><a href="/gallery/">Gallery</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li class="nav-hide-desk"><a href="/family-support/">Family Support</a></li>
+      </ul>
+      <div class="nav-mobile-ctas">
+        <a class="btn btn-solid" href="/tour/">Schedule a Tour</a>
+        <a class="btn btn-line" href="tel:7869000099">Call (786) 900-0099</a>
+      </div>
+    </nav>
+    <a class="nav-search-icon" href="/search/" aria-label="Search">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </a>
+    <a class="btn btn-solid" href="/tour/">Schedule a Tour</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div id="main" class="page-hero wrap" style="padding-bottom:120px">
+  <span class="eyebrow">Message Sent</span>
+  <h1>Thank You!</h1>
+  <div class="divider"><span>❦</span></div>
+  <p class="lead">We received your message and will get back to you as soon as possible — usually within one business day.</p>
+  <div style="margin-top:36px"><a class="btn btn-solid" href="/">Back to Home</a></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="logo"><img src="/assets/img/home/logo.png" alt="Creativa Academy — A Reggio Emilia Inspired School" width="498" height="177"></div>
+    <div class="tag">Where Children Learn, Grow &amp; Thrive.</div>
+    <div class="foot-legal">© 2026 Creativa Academy · A Reggio Emilia Inspired School · West Miami, FL</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('header nav');
+  if(!toggle || !nav) return;
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

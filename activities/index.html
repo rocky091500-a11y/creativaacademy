@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enrichment &amp; Activities | Creativa Academy</title>
+<meta name="description" content="Creativa Academy offers yoga, music, dance, gymnastics, soccer, science club, cooking, art, and more — enrichment and after-school activities for every child.">
+<link rel="canonical" href="https://creativaacademy.com/activities/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Creativa Academy">
+<meta property="og:title" content="Enrichment &amp; Activities | Creativa Academy">
+<meta property="og:description" content="Creativa Academy offers yoga, music, dance, gymnastics, soccer, science club, cooking, art, and more — enrichment and after-school activities for every child.">
+<meta property="og:url" content="https://creativaacademy.com/activities/">
+<meta property="og:image" content="https://creativaacademy.com/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Enrichment &amp; Activities | Creativa Academy">
+<meta name="twitter:description" content="Creativa Academy offers yoga, music, dance, gymnastics, soccer, science club, cooking, art, and more — enrichment and after-school activities for every child.">
+<meta name="twitter:image" content="https://creativaacademy.com/assets/img/og-image.jpg">
+<link rel="icon" type="image/png" href="/assets/img/home/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+<style>
+/* ── School-wide program band ── */
+.school-band {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:40px;
+}
+.school-card {
+  background:var(--sage);
+  color:var(--white);
+  border-radius:16px;
+  padding:28px 28px 24px;
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+}
+.school-card .sc-icon {
+  font-size:2rem;
+  flex-shrink:0;
+  margin-top:2px;
+}
+.school-card h3 {
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem;
+  font-weight:500;
+  color:var(--white);
+  margin:0 0 6px;
+}
+.school-card p {
+  font-size:14px;
+  opacity:.88;
+  margin:0;
+  line-height:1.6;
+}
+
+/* ── Activity cards ── */
+.act-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+  gap:24px;
+  margin-top:40px;
+}
+.act-card {
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.act-card-thumb {
+  position:relative;
+  height:0;
+  padding-bottom:56%;
+  overflow:hidden;
+  cursor:pointer;
+}
+.act-card-thumb img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  transition:transform .3s ease;
+}
+.act-card-thumb:hover img { transform:scale(1.04); }
+.act-card-thumb .thumb-label {
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  background:rgba(59,68,48,.72);
+  color:#fff;
+  font-size:11px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:4px 10px;
+  border-radius:20px;
+}
+.act-body {
+  padding:22px 22px 20px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+.act-body h3 {
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;
+  font-weight:500;
+  color:var(--ink);
+  margin:0 0 4px;
+}
+.act-provider {
+  font-size:11px;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  color:var(--sage);
+  font-weight:600;
+  margin-bottom:14px;
+}
+.act-meta {
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  font-size:13.5px;
+  color:var(--ink);
+  margin-bottom:16px;
+}
+.act-meta-row {
+  display:flex;
+  gap:8px;
+  align-items:baseline;
+}
+.act-meta-row .lbl {
+  font-size:10.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:var(--sage-deep);
+  min-width:48px;
+  flex-shrink:0;
+}
+.act-contact {
+  margin-top:auto;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+  font-size:13px;
+  color:var(--sage-deep);
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+.act-contact a {
+  color:var(--sage-deep);
+  text-decoration:none;
+  font-weight:500;
+}
+.act-contact a:hover { text-decoration:underline; }
+
+/* ── Flyer lightbox ── */
+#flyer-overlay {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.78);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+#flyer-overlay.open { display:flex; }
+#flyer-overlay img {
+  max-width:520px;
+  max-height:90vh;
+  width:100%;
+  object-fit:contain;
+  border-radius:12px;
+}
+#flyer-overlay button {
+  position:fixed;
+  top:20px;
+  right:24px;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:2rem;
+  cursor:pointer;
+  line-height:1;
+}
+
+/* Section label pill */
+.section-pill {
+  display:inline-block;
+  background:var(--cream-deep);
+  border:1px solid var(--line);
+  border-radius:20px;
+  font-size:12px;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:var(--sage-deep);
+  padding:5px 16px;
+  margin-bottom:12px;
+}
+
+@media(max-width:640px){
+  .school-band{grid-template-columns:1fr;}
+  .act-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="topbar">Now enrolling for 2026–2027 · Reggio Emilia inspired · <a href="tel:7869000099">Call (786) 900-0099 to schedule a tour</a></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/">
+      <img src="/assets/img/home/logo.png" alt="Creativa Academy — A Reggio Emilia Inspired School" width="498" height="177">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/team/">Meet Our Team</a></li>
+        <li><a href="/#programs">Programs</a></li>
+        <li><a class="on" href="/activities/">Enrichment &amp; Activities</a></li>
+        <li><a href="/tuition-financial-aid/">Tuition</a></li>
+        <li><a href="/parent-resources/">Parent Resources</a></li>
+        <li class="nav-hide-desk"><a href="/gallery/">Gallery</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li class="nav-hide-desk"><a href="/family-support/">Family Support</a></li>
+      </ul>
+      <div class="nav-mobile-ctas">
+        <a class="btn btn-solid" href="/tour/">Schedule a Tour</a>
+        <a class="btn btn-line" href="tel:7869000099">Call (786) 900-0099</a>
+      </div>
+    </nav>
+    <a class="nav-search-icon" href="/search/" aria-label="Search">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </a>
+    <a class="btn btn-solid" href="/tour/">Schedule a Tour</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div id="main" class="page-hero wrap">
+  <span class="eyebrow">Beyond the Classroom</span>
+  <h1>Enrichment &amp; Activities</h1>
+  <div class="divider"><span>❦</span></div>
+  <p class="lead">From school-wide programs to optional after-school activities, Creativa children have rich opportunities to move, create, and discover every day of the week.</p>
+</div>
+
+<!-- School-Wide Programs -->
+<section style="padding-top:56px">
+  <div class="wrap">
+    <span class="section-pill">School-Wide Programs</span>
+    <h2 style="margin-bottom:6px">For the Whole School</h2>
+    <p style="color:var(--ink);opacity:.7;max-width:560px;font-size:15px">These programs are part of our school community — every child at Creativa participates.</p>
+    <div class="school-band">
+      <div class="school-card">
+        <div class="sc-icon">🧘</div>
+        <div>
+          <h3>Yoga</h3>
+          <p>Mindful movement and breathing woven into our weekly rhythm. Yoga helps children develop body awareness, focus, and a sense of calm — a natural fit with the Reggio approach.</p>
+        </div>
+      </div>
+      <div class="school-card">
+        <div class="sc-icon">🎶</div>
+        <div>
+          <h3>Music</h3>
+          <p>Monthly music visits bring live instruments and singing into every classroom. Children explore rhythm, melody, and creative expression together as a school community.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- After-School Extracurriculars -->
+<section style="padding-top:72px">
+  <div class="wrap">
+    <span class="section-pill">After-School Activities</span>
+    <h2 style="margin-bottom:6px">Optional Enrichment Programs</h2>
+    <p style="color:var(--ink);opacity:.7;max-width:580px;font-size:15px">These programs are offered on-site after school and run by independent providers. Families enroll and pay directly with each provider.</p>
+
+    <div class="act-grid">
+
+      <!-- Dance -->
+      <div class="act-card">
+        <div class="act-card-thumb" onclick="openFlyer('/assets/img/activities/flyer-dance.webp','Dance Classes')">
+          <img src="/assets/img/activities/flyer-dance.webp" alt="Dance Classes flyer — Cristi's Dance Studio at Creativa Academy">
+          <span class="thumb-label">View Flyer</span>
+        </div>
+        <div class="act-body">
+          <h3>Dance Classes</h3>
+          <p class="act-provider">Cristi's Dance Studio</p>
+          <div class="act-meta">
+            <div class="act-meta-row"><span class="lbl">Days</span><span>Mondays &amp; Wednesdays</span></div>
+            <div class="act-meta-row"><span class="lbl">Time</span><span>3:00 – 3:45 PM</span></div>
+            <div class="act-meta-row"><span class="lbl">Includes</span><span>Ballet, Jazz, Lyrical, Stretching, Coordination &amp; Performances</span></div>
+          </div>
+          <div class="act-contact">
+            <a href="tel:7862051026">786.205.1026</a>
+            <a href="https://www.cristisdance.com" target="_blank" rel="noopener">cristisdance.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gymnastics -->
+      <div class="act-card">
+        <div class="act-card-thumb" onclick="openFlyer('/assets/img/activities/flyer-gymnastics.webp','Gymnastics')">
+          <img src="/assets/img/activities/flyer-gymnastics.webp" alt="Gymnastics flyer — Idol Gymnastics at Creativa Academy">
+          <span class="thumb-label">View Flyer</span>
+        </div>
+        <div class="act-body">
+          <h3>Gymnastics</h3>
+          <p class="act-provider">Idol Gymnastics</p>
+          <div class="act-meta">
+            <div class="act-meta-row"><span class="lbl">Day</span><span>Thursdays</span></div>
+            <div class="act-meta-row"><span class="lbl">Time</span><span>3:00 PM</span></div>
+            <div class="act-meta-row"><span class="lbl">Skills</span><span>Balance, coordination &amp; confidence</span></div>
+          </div>
+          <div class="act-contact">
+            <a href="tel:3053006354">305-300-6354</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soccer -->
+      <div class="act-card">
+        <div class="act-card-thumb" onclick="openFlyer('/assets/img/activities/flyer-soccer.webp','Soccer Shots')">
+          <img src="/assets/img/activities/flyer-soccer.webp" alt="Soccer Shots flyer — Creativa Academy">
+          <span class="thumb-label">View Flyer</span>
+        </div>
+        <div class="act-body">
+          <h3>Soccer Shots</h3>
+          <p class="act-provider">Soccer Shots · Ages 2–5</p>
+          <div class="act-meta">
+            <div class="act-meta-row"><span class="lbl">Day</span><span>Fridays</span></div>
+            <div class="act-meta-row"><span class="lbl">Time</span><span>3:00–3:30 PM (ages 2–3) · 3:35–4:10 PM (ages 4+)</span></div>
+            <div class="act-meta-row"><span class="lbl">Cost</span><span>$76/month + $50 registration fee (includes jersey)</span></div>
+          </div>
+          <div class="act-contact">
+            <a href="tel:7863901828">786-390-1828</a>
+            <a href="https://www.soccershots.com/miami" target="_blank" rel="noopener">soccershots.com/miami</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cooking Club -->
+      <div class="act-card">
+        <div class="act-card-thumb" onclick="openFlyer('/assets/img/activities/flyer-cooking.webp','Cooking Club')">
+          <img src="/assets/img/activities/flyer-cooking.webp" alt="Creative Recipes Cooking Club flyer — Creativa Academy">
+          <span class="thumb-label">View Flyer</span>
+        </div>
+        <div class="act-body">
+          <h3>Cooking Club</h3>
+          <p class="act-provider">Creative Recipes for Happy Kids · Ms. Patty</p>
+          <div class="act-meta">
+            <div class="act-meta-row"><span class="lbl">Day</span><span>Fridays</span></div>
+            <div class="act-meta-row"><span class="lbl">Time</span><span>3:30 – 4:30 PM</span></div>
+            <div class="act-meta-row"><span class="lbl">Includes</span><span>Kids Recipe Book &amp; Cooking Kit</span></div>
+          </div>
+          <div class="act-contact">
+            <a href="tel:3055251333">305-525-1333</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Science Club -->
+      <div class="act-card">
+        <div class="act-card-thumb" onclick="openFlyer('/assets/img/activities/flyer-science.webp','Science Club')">
+          <img src="/assets/img/activities/flyer-science.webp" alt="Science Club flyer — Creativa Academy">
+          <span class="thumb-label">View Flyer</span>
+        </div>
+        <div class="act-body">
+          <h3>Science Club</h3>
+          <p class="act-provider">Led by Ms. Almeida · Ages 3 &amp; up</p>
+          <div class="act-meta">
+            <div class="act-meta-row"><span class="lbl">Day</span><span>Wednesdays</span></div>
+            <div class="act-meta-row"><span class="lbl">Time</span><span>2:45 – 3:45 PM</span></div>
+            <div class="act-meta-row"><span class="lbl">Cost</span><span>$160/month</span></div>
+            <div class="act-meta-row"><span class="lbl">Focus</span><span>Hands-on experiments, STEM activities &amp; more</span></div>
+          </div>
+          <div class="act-contact">
+            <a href="tel:7869730372">786-973-0372</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marimba Music -->
+      <div class="act-card">
+        <div class="act-card-thumb" onclick="openFlyer('/assets/img/activities/flyer-marimba.webp','Marimba Music')">
+          <img src="/assets/img/activities/flyer-marimba.webp" alt="Marimba Music for Kids flyer — Creativa Academy">
+          <span class="thumb-label">View Flyer</span>
+        </div>
+        <div class="act-body">
+          <h3>Marimba Music</h3>
+          <p class="act-provider">Music for Kids · Ages 1–5</p>
+          <div class="act-meta">
+            <div class="act-meta-row"><span class="lbl">Day</span><span>Wednesdays</span></div>
+            <div class="act-meta-row"><span class="lbl">Time</span><span>3:15 – 4:00 PM</span></div>
+            <div class="act-meta-row"><span class="lbl">Cost</span><span>$120/month</span></div>
+            <div class="act-meta-row"><span class="lbl">Includes</span><span>Singing, Musical Games, Instruments, Puppets &amp; Guitar</span></div>
+          </div>
+          <div class="act-contact">
+            <a href="tel:7866241698">786.624.1698</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Art Classes -->
+      <div class="act-card">
+        <div class="act-card-thumb" onclick="openFlyer('/assets/img/activities/flyer-art.webp','Art Classes')">
+          <img src="/assets/img/activities/flyer-art.webp" alt="Art Classes flyer — Ms. Laura at Creativa Academy">
+          <span class="thumb-label">View Flyer</span>
+        </div>
+        <div class="act-body">
+          <h3>Art Classes</h3>
+          <p class="act-provider">Led by Ms. Laura</p>
+          <div class="act-meta">
+            <div class="act-meta-row"><span class="lbl">Days</span><span>Tuesdays &amp; Thursdays</span></div>
+            <div class="act-meta-row"><span class="lbl">Time</span><span>3:30 – 4:30 PM</span></div>
+            <div class="act-meta-row"><span class="lbl">Cost</span><span>Sept. $135 · Oct. $135 · Nov. $120<br>+ $80 materials fee</span></div>
+            <div class="act-meta-row"><span class="lbl">Medium</span><span>Pastels, acrylics, clay, paper mache &amp; more</span></div>
+          </div>
+          <div class="act-contact">
+            <a href="tel:3053211263">305-321-1263</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Piano / Kids-N-Notes -->
+      <div class="act-card">
+        <div class="act-card-thumb" onclick="openFlyer('/assets/img/activities/flyer-piano.webp','Kids-N-Notes')">
+          <img src="/assets/img/activities/flyer-piano.webp" alt="Kids-N-Notes piano and music lessons flyer — Creativa Academy">
+          <span class="thumb-label">View Flyer</span>
+        </div>
+        <div class="act-body">
+          <h3>Piano &amp; Music Lessons</h3>
+          <p class="act-provider">Kids-N-Notes</p>
+          <div class="act-meta">
+            <div class="act-meta-row"><span class="lbl">Includes</span><span>Piano, Violin, Singing &amp; more</span></div>
+          </div>
+          <div class="act-contact">
+            <a href="tel:7863162161">786-316-2161</a>
+            <a href="https://www.kids-n-notes.com" target="_blank" rel="noopener">kids-n-notes.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.act-grid -->
+  </div>
+</section>
+
+<!-- CTA band -->
+<section id="tour" style="padding-top:0;margin-top:96px">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Questions About Activities?</h2>
+        <p>Our front office can help connect you with the right program for your child.</p>
+        <a class="btn" href="/contact/">Contact Us</a>
+      </div>
+      <div class="cta-contact">
+        <strong>Visit Us</strong><br>
+        13910 SW 8th St, Miami, FL 33184<br>
+        <a href="tel:7869000099">(786) 900-0099</a><br>
+        <a href="mailto:info@creativaacademy.com">info@creativaacademy.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo"><img src="/assets/img/home/logo.png" alt="Creativa Academy — A Reggio Emilia Inspired School" width="498" height="177"></div>
+    <div class="tag">Where Children Learn, Grow &amp; Thrive.</div>
+    <div class="foot-links">
+      <a href="/">Home</a><a href="/about/">About Us</a><a href="/team/">Meet Our Team</a><a href="/#programs">Programs</a><a href="/tuition-financial-aid/">Tuition &amp; Financial Aid</a><a href="/activities/">Activities</a><a href="/calendar/">Calendar</a><a href="/menu/">Menu</a><a href="/parent-resources/">Parent Resources</a><a href="/gallery/">Gallery</a><a href="/contact/">Contact</a>
+    </div>
+    <div class="foot-social"><a href="https://www.instagram.com/creativaacademy.miami/" target="_blank" rel="noopener">Instagram</a></div>
+    <div class="foot-legal">© 2026 Creativa Academy · A Reggio Emilia Inspired School · West Miami, FL</div>
+  </div>
+</footer>
+
+<!-- Flyer lightbox -->
+<div id="flyer-overlay" role="dialog" aria-modal="true" aria-label="Flyer preview" onclick="closeFlyer(event)">
+  <button onclick="closeFlyer()" aria-label="Close flyer">×</button>
+  <img id="flyer-img" src="" alt="">
+</div>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('header nav');
+  if(!toggle || !nav) return;
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    });
+  });
+})();
+
+function openFlyer(src, label) {
+  var overlay = document.getElementById('flyer-overlay');
+  var img = document.getElementById('flyer-img');
+  img.src = src;
+  img.alt = label + ' flyer';
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeFlyer(e) {
+  if (e && e.target !== document.getElementById('flyer-overlay') && e.target.tagName !== 'BUTTON') return;
+  document.getElementById('flyer-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeFlyer({target:document.getElementById('flyer-overlay')}); });
+</script>
+</body>
+</html>
