@@ -9,12 +9,12 @@
   if (/YOUR-/.test(SUPABASE_URL + SUPABASE_ANON_KEY) || !window.fetch || !window.FormData) return;
 
   // Capture phase: runs before each page's own submit handler, which may preventDefault and post via fetch.
-  // No validity check here on purpose: some pages (tour) send to Netlify without validating, and the CRM
-  // should see whatever Netlify sees. A corrected resubmit within 2 minutes updates the same CRM row.
+  // Each page only sends a form once its required fields pass, so skip invalid attempts here too.
   document.addEventListener('submit', function (e) {
     var form = e.target;
     var name = form && form.getAttribute && form.getAttribute('name');
     if (!FORMS[name]) return;
+    if (typeof form.checkValidity === 'function' && !form.checkValidity()) return;
     var data = {};
     new FormData(form).forEach(function (value, key) {
       if (typeof value !== 'string') return; // skip file inputs

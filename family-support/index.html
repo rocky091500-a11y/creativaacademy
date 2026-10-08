@@ -672,6 +672,8 @@ renderQ();
 // Form — preview mode, not connected
 document.getElementById('helpform').addEventListener('submit', function(e){
   e.preventDefault();
+  /* Required fields (the form is novalidate, so the browser won't check them itself) */
+  if (!this.checkValidity()) { this.reportValidity(); return; }
   var btn = document.getElementById('fs-btn');
   btn.disabled = true;
   btn.textContent = 'Sending…';

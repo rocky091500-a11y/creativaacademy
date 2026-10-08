@@ -399,6 +399,8 @@ document.getElementById('ref-other-cb').addEventListener('change', function(){
 document.getElementById('bloom-form').addEventListener('submit', function(e){
   e.preventDefault();
   var form = this;
+  /* Required fields (the form is novalidate, so the browser won't check them itself) */
+  if (!form.checkValidity()) { form.reportValidity(); return; }
   var btn = document.getElementById('bloom-submit-btn');
 
   /* Basic validation */
