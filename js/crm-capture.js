@@ -23,6 +23,24 @@
     return input ? input.value : '';
   }
 
+  // ── Texting notice under the phone field (carriers require it before the CRM may text tour reminders).
+  targetForms().forEach(function (form) {
+    var phone = form.querySelector('input[type="tel"], input[name="phone"], input[name="parent-phone"]');
+    if (!phone || form.querySelector('.crm-sms-note')) return;
+    var note = document.createElement('p');
+    note.className = 'crm-sms-note';
+    note.style.cssText = 'margin:6px 0 0;font-size:12.5px;line-height:1.45;opacity:.75';
+    note.appendChild(document.createTextNode('By sharing your phone number, you agree that Creativa Academy may text you about ' +
+      'your inquiry and tour (for example, a reminder the day before). Usually 1–3 messages. Msg & data rates may apply. ' +
+      'Reply STOP to opt out, HELP for help. '));
+    var link = document.createElement('a');
+    link.href = '/privacy/';
+    link.textContent = 'Privacy policy';
+    note.appendChild(link);
+    var field = phone.closest('.field') || phone.parentNode;
+    field.appendChild(note);
+  });
+
   // ── Turnstile widget: one per form, just above the submit button. Usually invisible;
   //    a suspicious visitor gets a single checkbox.
   if (turnstileOn) {
