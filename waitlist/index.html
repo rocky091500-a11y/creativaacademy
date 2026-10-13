@@ -71,8 +71,9 @@
 
       <p class="waitlist-intro">We'd love to learn a little about your family before we meet. This form takes about 2 minutes to fill out — we'll reach out by phone or email within a few days of receiving it.</p>
 
-      <form action='/waitlist/thanks/' method='POST' name='waitlist' data-netlify='true'>
+      <form action='/waitlist/thanks/' method='POST' name='waitlist' data-netlify='true' netlify-honeypot='bot-field'>
         <input type="hidden" name="form-name" value="waitlist">
+        <p hidden><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
         <div class="form-row">
           <div class="form-group">

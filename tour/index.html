@@ -101,7 +101,7 @@
     </div>
 
     <div class="tour-card" id="tour-card">
-      <form id='tour-form' method='POST' name='schedule-tour' novalidate data-netlify='true'>
+      <form id='tour-form' method='POST' name='schedule-tour' novalidate data-netlify='true' netlify-honeypot='bot-field'>
         <input type="hidden" name="form-name" value="schedule-tour">
         <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
 
@@ -128,9 +128,9 @@
         </div>
 
         <div class="field">
-          <label>Best way to reach you</label>
-          <div class="tour-radio-row">
-            <label><input type="radio" name="contact-pref" value="Text"> Text</label>
+          <label id="contact-pref-label">Best way to reach you <span style="color:#b94a3a">*</span></label>
+          <div class="tour-radio-row" role="radiogroup" aria-labelledby="contact-pref-label" aria-required="true">
+            <label><input type="radio" name="contact-pref" value="Text" required> Text</label>
             <label><input type="radio" name="contact-pref" value="Phone call"> Phone call</label>
             <label><input type="radio" name="contact-pref" value="Email"> Email</label>
           </div>
@@ -156,8 +156,8 @@
         </div>
 
         <div class="field">
-          <label for="program">Program of Interest</label>
-          <select id="program" name="program">
+          <label for="program">Program of Interest <span style="color:#b94a3a">*</span></label>
+          <select id="program" name="program" required>
             <option value="" disabled selected>Select a program</option>
             <option>15 – 17 Months</option>
             <option>18 – 23 Months</option>
@@ -188,8 +188,8 @@
 
         <!-- Tour Preferences -->
         <div class="field">
-          <label>Preferred days to visit <span style="color:var(--ink);opacity:.45;font-size:.78rem;text-transform:none;letter-spacing:normal;font-weight:400">(select all that work)</span></label>
-          <div class="tour-check-row">
+          <label id="days-label">Preferred days to visit <span style="color:#b94a3a">*</span> <span style="color:var(--ink);opacity:.45;font-size:.78rem;text-transform:none;letter-spacing:normal;font-weight:400">(select all that work)</span></label>
+          <div class="tour-check-row" role="group" aria-labelledby="days-label" aria-required="true">
             <label><input type="checkbox" name="days[]" value="Monday"> Monday</label>
             <label><input type="checkbox" name="days[]" value="Tuesday"> Tuesday</label>
             <label><input type="checkbox" name="days[]" value="Wednesday"> Wednesday</label>
@@ -199,22 +199,22 @@
         </div>
 
         <div class="field">
-          <label>Preferred tour time <span style="color:var(--ink);opacity:.45;font-size:.78rem;text-transform:none;letter-spacing:normal;font-weight:400">(tours run Monday – Friday)</span></label>
-          <div class="tour-radio-row">
-            <label><input type="radio" name="time-pref" value="9:00 am"> 9:00 am</label>
+          <label id="time-pref-label">Preferred tour time <span style="color:#b94a3a">*</span> <span style="color:var(--ink);opacity:.45;font-size:.78rem;text-transform:none;letter-spacing:normal;font-weight:400">(tours run Monday – Friday)</span></label>
+          <div class="tour-radio-row" role="radiogroup" aria-labelledby="time-pref-label" aria-required="true">
+            <label><input type="radio" name="time-pref" value="9:00 am" required> 9:00 am</label>
             <label><input type="radio" name="time-pref" value="9:30 am"> 9:30 am</label>
             <label><input type="radio" name="time-pref" value="10:00 am"> 10:00 am</label>
           </div>
         </div>
 
         <div class="field">
-          <label for="notes">Questions or anything you'd like us to know <span style="color:var(--ink);opacity:.45;font-size:.78rem;text-transform:none;letter-spacing:normal;font-weight:400">(optional)</span></label>
-          <textarea id="notes" name="notes" placeholder="Ask us anything — about programs, tuition, scholarships, or what a typical day looks like."></textarea>
+          <label for="notes">Questions or anything you'd like us to know <span style="color:#b94a3a">*</span></label>
+          <textarea id="notes" name="notes" required placeholder="Ask us anything — about programs, tuition, scholarships, or what a typical day looks like. No questions? Just write “None”."></textarea>
         </div>
 
         <div class="field">
-          <label for="referral">How did you hear about Creativa?</label>
-          <select id="referral" name="referral">
+          <label for="referral">How did you hear about Creativa? <span style="color:#b94a3a">*</span></label>
+          <select id="referral" name="referral" required>
             <option value="" disabled selected>Select one</option>
             <option>Google search</option>
             <option>Instagram</option>
@@ -298,12 +298,30 @@
   var sel = document.getElementById('referral');
   var wrap = document.getElementById('referrer-name-wrap');
   var inp = document.getElementById('referrer-name');
-  sel.addEventListener('change', function(){
+  function apply(){
     var show = sel.value === 'Friend or family';
     wrap.hidden = !show;
     inp.required = show;
     if (!show) inp.value = '';
-  });
+  }
+  sel.addEventListener('change', apply);
+  /* The browser may refill the form (Back button) without a change event */
+  window.addEventListener('pageshow', apply);
+  window.addEventListener('submit', function(e){ if (e.target && e.target.id === 'tour-form') apply(); }, true);
+})();
+
+/* Preferred days: at least one (checkbox groups have no built-in "required") */
+(function(){
+  var days = document.querySelectorAll('#tour-form input[name="days[]"]');
+  function sync(){
+    var any = Array.prototype.some.call(days, function(d){ return d.checked; });
+    days[0].setCustomValidity(any ? '' : 'Please pick at least one day that works for a tour.');
+  }
+  Array.prototype.forEach.call(days, function(d){ d.addEventListener('change', sync); });
+  sync();
+  /* The browser may refill the form (Back button) without a change event; check again before anything reads it */
+  window.addEventListener('pageshow', sync);
+  window.addEventListener('submit', function(e){ if (e.target && e.target.id === 'tour-form') sync(); }, true);
 })();
 
 document.getElementById('tour-form').addEventListener('submit', function(e){
