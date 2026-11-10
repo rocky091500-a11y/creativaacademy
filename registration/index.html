@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Registration | Creativa Academy — West Miami Preschool</title>
+<meta name="description" content="Register your child at Creativa Academy online: your child, parents, emergency contacts, authorized pick-up, health and programs.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://creativaacademy.com/registration/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Creativa Academy">
+<meta property="og:title" content="Online Registration | Creativa Academy — West Miami Preschool">
+<meta property="og:description" content="Register your child at Creativa Academy online: your child, parents, emergency contacts, authorized pick-up, health and programs.">
+<meta property="og:url" content="https://creativaacademy.com/registration/">
+<meta property="og:image" content="https://creativaacademy.com/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<link rel="icon" type="image/png" href="/assets/img/home/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+<style>
+/* Online registration: the sections of the form, the rows that repeat, and the choices. */
+.reg-form fieldset{border:1px solid var(--line);border-radius:14px;padding:26px 26px 6px;margin:0 0 26px;background:var(--white)}
+.reg-form legend{font-family:'Playfair Display',serif;font-size:21px;color:var(--ink);padding:0 8px}
+.reg-form .hint{font-family:'Jost',sans-serif;font-size:13.5px;color:rgba(59,68,48,.7);margin:-4px 0 18px;line-height:1.5}
+.reg-form .req{color:var(--gold)}
+.reg-form .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.reg-form .person{border-top:1px dashed var(--line);padding-top:18px;margin-top:4px}
+.reg-form .person:first-of-type{border-top:0;padding-top:0}
+.reg-form .choices{display:flex;flex-wrap:wrap;gap:10px 22px;margin:2px 0 20px}
+.reg-form .choices label{font-family:'Jost',sans-serif;font-size:15px;font-weight:400;letter-spacing:0;text-transform:none;display:flex;gap:8px;align-items:center;cursor:pointer}
+.reg-form .choices input{width:18px;height:18px;accent-color:var(--sage)}
+.reg-form .q{font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink);margin:0 0 8px}
+.reg-form .add-row{font-family:'Jost',sans-serif;font-size:14px;background:none;border:1px dashed rgba(59,68,48,.35);border-radius:8px;padding:9px 14px;color:var(--ink);cursor:pointer;margin:0 0 20px}
+.reg-form .sms-note{font-family:'Jost',sans-serif;font-size:12.5px;line-height:1.45;opacity:.75;margin:-12px 0 18px}
+.reg-msg{font-family:'Jost',sans-serif;font-size:15px;border-radius:10px;padding:14px 18px;margin:0 0 20px}
+.reg-msg.err{background:#F3D9D4;color:#8a2c1d}
+.reg-done{text-align:center;padding:40px 10px}
+.reg-done h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:12px}
+@media (max-width:640px){.reg-form .row3{grid-template-columns:1fr}.reg-form fieldset{padding:20px 16px 4px}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="topbar">Now enrolling for 2026–2027 · Reggio Emilia inspired · <a href="tel:7869000099">Call (786) 900-0099 to schedule a tour</a></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/">
+      <img src="/assets/img/home/logo.png" alt="Creativa Academy — A Reggio Emilia Inspired School" width="498" height="177">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/team/">Meet Our Team</a></li>
+        <li><a href="/#programs">Programs</a></li>
+        <li><a href="/activities/">Enrichment &amp; Activities</a></li>
+        <li><a href="/tuition-financial-aid/">Tuition</a></li>
+        <li><a href="/parent-resources/">Parent Resources</a></li>
+        <li class="nav-hide-desk"><a href="/gallery/">Gallery</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li class="nav-hide-desk"><a href="/family-support/">Family Support</a></li>
+      </ul>
+      <div class="nav-mobile-ctas">
+        <a class="btn btn-solid" href="/tour/">Schedule a Tour</a>
+        <a class="btn btn-line" href="tel:7869000099">Call (786) 900-0099</a>
+      </div>
+    </nav>
+    <a class="nav-search-icon" href="/search/" aria-label="Search">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </a>
+    <a class="btn btn-solid" href="/tour/">Schedule a Tour</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div id="main" class="page-hero wrap">
+  <span class="eyebrow">Enrollment</span>
+  <h1>Online Registration</h1>
+  <div class="divider"><span>❦</span></div>
+  <p class="lead">Thank you for choosing Creativa Academy! Please fill this out for each child. It's the same information as the registration packet; this is how we put your family into our system.</p>
+</div>
+
+<section class="waitlist-form-section">
+  <div class="wrap">
+    <div class="waitlist-form-wrap">
+      <div class="reg-done" id="reg-done" hidden>
+        <h2>Thank you!</h2>
+        <p class="waitlist-intro">We received <b id="reg-done-name">your child</b>'s registration. Our office will review it and reach out if anything is missing.
+          To register a brother or sister, <a href="/registration/">fill out another one</a>.</p>
+      </div>
+      <form class="reg-form" id="reg-form" novalidate>
+        <p hidden><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <p class="hint">Fields with <span class="req">*</span> are needed. It takes about 10 minutes.</p>
+
+        <fieldset><legend>Your child</legend>
+          <div class="form-row"><div class="form-group"><label for="child_first">First name <span class="req">*</span></label><input type="text" id="child_first" name="child_first" required></div><div class="form-group"><label for="child_last">Last name <span class="req">*</span></label><input type="text" id="child_last" name="child_last" required></div></div>
+          <div class="form-row"><div class="form-group"><label for="child_dob">Date of birth <span class="req">*</span></label><input type="date" id="child_dob" name="child_dob" required></div>
+            <div class="form-group"><label for="program">Classroom <span class="req">*</span></label>
+              <select id="program" name="program" required><option value="" selected>Select a classroom</option>
+                <option value="15–17 Months">15–17 Months</option><option value="18–23 Months">18–23 Months</option><option value="Early 2's">Early 2's</option><option value="Late 2's">Late 2's</option><option value="Early 3's">Early 3's</option><option value="Late 3's">Late 3's</option><option value="VPK (4–5 Years)">VPK (4–5 Years)</option><option value="Kindergarten">Kindergarten</option><option value="Not sure">Not sure</option></select></div></div>
+          <div class="form-row"><div class="form-group"><label for="start_on">Start date <span class="req">*</span></label><input type="date" id="start_on" name="start_on" required></div><span></span></div>
+          <p class="q">Schedule</p>
+          <div class="choices"><label><input type="radio" name="schedule" value="until_3"> Until 3:00</label>
+            <label><input type="radio" name="schedule" value="until_545"> Until 5:45 (with after care)</label></div>
+        </fieldset>
+
+        <fieldset><legend>Parents or guardians</legend>
+          <p class="hint">Parents are always allowed to pick up. Add the second parent if there is one.</p>
+          <div class="person" data-person="p1">
+          <p class="q">First parent or guardian</p>
+          <div class="form-row"><div class="form-group"><label for="p1_rel">Relationship to the child <span class="req">*</span></label><select id="p1_rel" name="p1_rel" required><option value="" selected>Select one</option><option>Mother</option><option>Father</option><option>Grandmother</option><option>Grandfather</option><option>Legal guardian</option><option>Other</option></select></div><span></span></div>
+          <div class="form-row"><div class="form-group"><label for="p1_first">First name <span class="req">*</span></label><input type="text" id="p1_first" name="p1_first" required></div><div class="form-group"><label for="p1_last">Last name <span class="req">*</span></label><input type="text" id="p1_last" name="p1_last" required></div></div>
+          <div class="form-row"><div class="form-group"><label for="p1_cell">Cell phone <span class="req">*</span></label><input type="tel" id="p1_cell" name="p1_cell" placeholder="(786) 000-0000" required></div><div class="form-group"><label for="p1_email">Email</label><input type="email" id="p1_email" name="p1_email" placeholder="you@email.com"></div></div>
+          <p class="sms-note">By sharing your phone number, you agree that Creativa Academy may text you about your child (for example, school reminders, activities and payments). Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. <a href="/privacy/">Privacy policy</a></p>
+          <div class="form-group"><label for="p1_address">Home address <span class="req">*</span></label><input type="text" id="p1_address" name="p1_address" placeholder="Street, city, ZIP" required></div>
+          
+          <div class="form-row"><div class="form-group"><label for="p1_employer">Where you work</label><input type="text" id="p1_employer" name="p1_employer"></div><div class="form-group"><label for="p1_work_phone">Work phone</label><input type="tel" id="p1_work_phone" name="p1_work_phone"></div></div>
+        </div>
+          <div class="person" data-person="p2">
+          <p class="q">Second parent or guardian</p>
+          <div class="form-row"><div class="form-group"><label for="p2_rel">Relationship to the child</label><select id="p2_rel" name="p2_rel"><option value="" selected>Select one</option><option>Mother</option><option>Father</option><option>Grandmother</option><option>Grandfather</option><option>Legal guardian</option><option>Other</option></select></div><span></span></div>
+          <div class="form-row"><div class="form-group"><label for="p2_first">First name</label><input type="text" id="p2_first" name="p2_first"></div><div class="form-group"><label for="p2_last">Last name</label><input type="text" id="p2_last" name="p2_last"></div></div>
+          <div class="form-row"><div class="form-group"><label for="p2_cell">Cell phone</label><input type="tel" id="p2_cell" name="p2_cell" placeholder="(786) 000-0000"></div><div class="form-group"><label for="p2_email">Email</label><input type="email" id="p2_email" name="p2_email" placeholder="you@email.com"></div></div>
+          
+          <div class="form-group"><label for="p2_address">Home address</label><input type="text" id="p2_address" name="p2_address" placeholder="Street, city, ZIP"></div>
+          <div class="choices"><label><input type="checkbox" id="p2_same" name="p2_same"> Same address as the first parent</label></div>
+          <div class="form-row"><div class="form-group"><label for="p2_employer">Where you work</label><input type="text" id="p2_employer" name="p2_employer"></div><div class="form-group"><label for="p2_work_phone">Work phone</label><input type="tel" id="p2_work_phone" name="p2_work_phone"></div></div>
+        </div>
+        </fieldset>
+
+        <fieldset><legend>Emergency contacts</legend>
+          <p class="hint">Who we call if we can't reach you (not the parents).</p>
+          <div class="rows" data-rows="ec" data-max="4"><div class="row3 c-row" data-row="ec">
+            <div class="form-group"><label for="ec1_first">First name</label><input type="text" id="ec1_first" name="ec1_first"></div><div class="form-group"><label for="ec1_last">Last name</label><input type="text" id="ec1_last" name="ec1_last"></div>
+            <div class="form-group"><label for="ec1_rel">Relationship</label><input type="text" id="ec1_rel" name="ec1_rel" placeholder="Aunt, neighbor…"></div>
+          </div>
+          <div class="form-row c-row2" data-row2="ec"><div class="form-group"><label for="ec1_cell">Phone</label><input type="tel" id="ec1_cell" name="ec1_cell" placeholder="(786) 000-0000"></div><span></span></div><div class="row3 c-row" data-row="ec">
+            <div class="form-group"><label for="ec2_first">First name</label><input type="text" id="ec2_first" name="ec2_first"></div><div class="form-group"><label for="ec2_last">Last name</label><input type="text" id="ec2_last" name="ec2_last"></div>
+            <div class="form-group"><label for="ec2_rel">Relationship</label><input type="text" id="ec2_rel" name="ec2_rel" placeholder="Aunt, neighbor…"></div>
+          </div>
+          <div class="form-row c-row2" data-row2="ec"><div class="form-group"><label for="ec2_cell">Phone</label><input type="tel" id="ec2_cell" name="ec2_cell" placeholder="(786) 000-0000"></div><span></span></div></div>
+          <button type="button" class="add-row" data-add="ec">+ Add another emergency contact</button>
+        </fieldset>
+
+        <fieldset><legend>Authorized pick-up</legend>
+          <p class="hint">Besides the parents, who may pick up your child. We'll ask for their photo ID.</p>
+          <div class="rows" data-rows="pu" data-max="6"><div class="row3 c-row" data-row="pu">
+            <div class="form-group"><label for="pu1_first">First name</label><input type="text" id="pu1_first" name="pu1_first"></div><div class="form-group"><label for="pu1_last">Last name</label><input type="text" id="pu1_last" name="pu1_last"></div>
+            <div class="form-group"><label for="pu1_rel">Relationship</label><input type="text" id="pu1_rel" name="pu1_rel" placeholder="Aunt, neighbor…"></div>
+          </div>
+          <div class="form-row c-row2" data-row2="pu"><div class="form-group"><label for="pu1_cell">Phone</label><input type="tel" id="pu1_cell" name="pu1_cell" placeholder="(786) 000-0000"></div><span></span></div><div class="row3 c-row" data-row="pu">
+            <div class="form-group"><label for="pu2_first">First name</label><input type="text" id="pu2_first" name="pu2_first"></div><div class="form-group"><label for="pu2_last">Last name</label><input type="text" id="pu2_last" name="pu2_last"></div>
+            <div class="form-group"><label for="pu2_rel">Relationship</label><input type="text" id="pu2_rel" name="pu2_rel" placeholder="Aunt, neighbor…"></div>
+          </div>
+          <div class="form-row c-row2" data-row2="pu"><div class="form-group"><label for="pu2_cell">Phone</label><input type="tel" id="pu2_cell" name="pu2_cell" placeholder="(786) 000-0000"></div><span></span></div></div>
+          <button type="button" class="add-row" data-add="pu">+ Add another person</button>
+        </fieldset>
+
+        <fieldset><legend>Health</legend>
+          <div class="form-group"><label for="allergies">Allergies</label>
+            <input type="text" id="allergies" name="allergies" maxlength="300" placeholder="Food, medicine, bee stings… Leave it empty if none"></div>
+          <p class="q">Medicine kept at school (for example, an EpiPen or inhaler)</p>
+          <div class="rows" data-rows="med" data-max="3">
+            <div class="row3 c-row" data-row="med"><div class="form-group"><label for="med1_name">Medicine</label><input type="text" id="med1_name" name="med1_name"></div><div class="form-group"><label for="med1_details">What for / how to give it</label><input type="text" id="med1_details" name="med1_details"></div><div class="form-group"><label for="med1_expires_on">Expires</label><input type="date" id="med1_expires_on" name="med1_expires_on"></div></div>
+          </div>
+          <button type="button" class="add-row" data-add="med">+ Add another medicine</button>
+          <div class="form-row"><div class="form-group"><label for="ped_name">Pediatrician (doctor)</label><input type="text" id="ped_name" name="ped_name" placeholder="Doctor's name"></div><div class="form-group"><label for="ped_phone">Doctor's phone</label><input type="tel" id="ped_phone" name="ped_phone"></div></div>
+        </fieldset>
+
+        <fieldset><legend>Support and therapies</legend>
+          <p class="q">Does your child have an RBT?</p>
+          <div class="choices"><label><input type="radio" name="rbt" value="no"> No</label><label><input type="radio" name="rbt" value="yes"> Yes</label>
+            <label><input type="radio" name="rbt" value="in_process"> In process</label></div>
+          <div class="form-group"><label for="rbt_note">RBT's name or agency</label><input type="text" id="rbt_note" name="rbt_note"></div>
+          <p class="q">Therapies</p>
+          <div class="choices"><label><input type="checkbox" name="therapy" value="speech"> Speech</label>
+            <label><input type="checkbox" name="therapy" value="ot"> OT (occupational)</label><label><input type="checkbox" name="therapy" value="pt"> PT (physical)</label></div>
+          <div class="form-group"><label for="therapy_note">Therapist or agency, days</label><input type="text" id="therapy_note" name="therapy_note"></div>
+        </fieldset>
+
+        <fieldset><legend>Programs and scholarships</legend>
+          <p class="hint">Check all that apply. None checked = private pay.</p>
+          <div class="choices">
+            <label><input type="checkbox" name="funding" value="sr"> School Readiness (ELC)</label>
+            <label><input type="checkbox" name="funding" value="sr_bpiece"> School Readiness – BPIECE</label>
+            <label><input type="checkbox" name="funding" value="vpk"> VPK</label>
+            <label><input type="checkbox" name="funding" value="fes_eo"> Step Up: FES-EO</label>
+            <label><input type="checkbox" name="funding" value="fes_ua"> Step Up: FES-UA (Unique Abilities)</label>
+            <label><input type="checkbox" name="funding" value="stepup_pending"> Step Up: applied, waiting</label>
+          </div>
+          <div class="form-group"><label for="award_id">Award or certificate number (if you have it)</label><input type="text" id="award_id" name="award_id"></div>
+        </fieldset>
+
+        <fieldset><legend>Photos</legend>
+          <p class="q">May we share photos of your child on our website and social media? <span class="req">*</span></p>
+          <div class="choices"><label><input type="radio" name="photo_ok" value="yes" required> Yes</label><label><input type="radio" name="photo_ok" value="no"> No</label></div>
+        </fieldset>
+
+        <fieldset><legend>Anything else</legend>
+          <div class="form-group"><label for="notes">Anything we should know</label>
+            <textarea id="notes" name="notes" maxlength="1000" placeholder="Brothers or sisters at Creativa, special needs, custody, how your child naps…"></textarea></div>
+        </fieldset>
+
+        <fieldset><legend>Confirm</legend>
+          <div class="choices"><label><input type="checkbox" name="confirm" required> The information above is correct, to the best of my knowledge. <span class="req">*</span></label></div>
+          <div class="form-group"><label for="signed_name">Type your full name <span class="req">*</span></label><input type="text" id="signed_name" name="signed_name" required></div>
+        </fieldset>
+
+        <div class="reg-msg err" id="reg-error" role="alert" hidden></div>
+        <div class="crm-turnstile" style="margin:12px 0"></div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-solid" id="reg-send" style="width:100%;justify-content:center;display:block;font-size:13px;letter-spacing:.18em">Send Registration &rarr;</button>
+        </div>
+        <p style="font-family:'Jost',sans-serif;font-size:12.5px;color:rgba(59,68,48,.55);margin-top:16px;text-align:center">Your information goes only to the Creativa Academy office. We will never share it.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Prefer to Talk First?</h2>
+        <p>Call us or schedule a tour and we'll answer every question in person.</p>
+        <a class="btn" href="/tour/">Schedule a Tour</a>
+      </div>
+      <div class="cta-contact">
+        <strong>Contact Us</strong><br>
+        13910 SW 8th St, Miami, FL 33184<br>
+        <a href="tel:7869000099">(786) 900-0099</a><br>
+        <a href="mailto:info@creativaacademy.com">info@creativaacademy.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo"><img src="/assets/img/home/logo.png" alt="Creativa Academy — A Reggio Emilia Inspired School" width="498" height="177"></div>
+    <div class="tag">Where Children Learn, Grow &amp; Thrive.</div>
+    <div class="foot-links">
+      <a href="/">Home</a><a href="/about/">About Us</a><a href="/team/">Meet Our Team</a><a href="/#programs">Programs</a><a href="/tuition-financial-aid/">Tuition &amp; Financial Aid</a><a href="/activities/">Activities</a><a href="/calendar/">Calendar</a><a href="/menu/">Menu</a><a href="/parent-resources/">Parent Resources</a><a href="/gallery/">Gallery</a><a href="/contact/">Contact</a>
+    </div>
+    <div class="foot-social"><a href="https://www.instagram.com/creativaacademy.miami/" target="_blank" rel="noopener">Instagram</a></div>
+    <div class="foot-legal">© 2026 Creativa Academy · A Reggio Emilia Inspired School · West Miami, FL</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('header nav');
+  if(!toggle || !nav) return;
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    });
+  });
+})();
+</script>
+
+<script src="/js/registration.js" defer></script>
+</body>
+</html>
